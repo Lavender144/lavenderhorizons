@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavender Horizons Wellbeing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lavender: {
+                            light: '#E6E6FA',
+                            DEFAULT: '#B19CD9',
+                            dark: '#9370DB',
+                        },
+                        pastel: {
+                            blue: '#CCDFFF',
+                            pink: '#FFD6E0',
+                            yellow: '#FFF4CC',
+                            green: '#D1F0E0',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Montserrat', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-pattern {
+            background-color: #f9f7ff;
+            background-image: radial-gradient(#B19CD9 0.5px, transparent 0.5px), radial-gradient(#B19CD9 0.5px, #f9f7ff 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #B19CD9;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(177, 156, 217, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-lavender" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
+                </svg>
+                <h1 class="text-xl font-serif font-semibold text-gray-800">Lavender Horizons</h1>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-gray-600 hover:text-lavender transition">Home</a>
+                <a href="#about" class="nav-link text-gray-600 hover:text-lavender transition">About</a>
+                <a href="#psychology" class="nav-link text-gray-600 hover:text-lavender transition">Psychology</a>
+                <a href="#services" class="nav-link text-gray-600 hover:text-lavender transition">Services</a>
+                <a href="#contact" class="nav-link text-gray-600 hover:text-lavender transition">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-600 hover:text-lavender">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-4 py-3 shadow-inner">
+            <a href="#home" class="block py-2 text-gray-600 hover:text-lavender">Home</a>
+            <a href="#about" class="block py-2 text-gray-600 hover:text-lavender">About</a>
+            <a href="#psychology" class="block py-2 text-gray-600 hover:text-lavender">Psychology</a>
+            <a href="#services" class="block py-2 text-gray-600 hover:text-lavender">Services</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover:text-lavender">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-pattern pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-800 mb-4">Begin Your Journey to <span class="text-lavender">Wellbeing</span></h1>
+                    <p class="text-lg text-gray-600 mb-8">Professional counseling services to help you navigate life's challenges and discover your path to mental wellness.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#services" class="bg-lavender hover:bg-lavender-dark text-white font-medium py-3 px-6 rounded-lg transition duration-300 text-center">Our Services</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfHlBM4xr9aKeo-4d11gkLNsyC8jHKAiNiDorz2FUlVXxz_0Q/viewform?fbclid=PAZXh0bgNhZW0CMTEAAafGvt7SJl8q1DniMrC-xfWek16jQJlos0TjPt0Pg8lTZaJah8FJei3mneSf-w_aem_Ok9-NkLGmwA29xBgx30vhg" target="_blank" class="border-2 border-lavender text-lavender hover:bg-lavender hover:text-white font-medium py-3 px-6 rounded-lg transition duration-300 text-center">Book a Consultation</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <svg class="w-full max-w-md" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M424.7,297.1c-24.7,51.1-59.6,93.2-112.3,98.4c-52.7,5.2-83.6-31.7-137.2-59.5c-53.6-27.8-129.8-46.4-142.2-96.4 c-12.4-50,39.1-131.3,97.4-138.9c58.3-7.6,123.5,58.5,188.5,59.5C383.9,161.2,449.4,246,424.7,297.1z" fill="#E6E6FA"/>
+                        <circle cx="180" cy="180" r="70" fill="#D1F0E0"/>
+                        <circle cx="300" cy="220" r="50" fill="#FFD6E0"/>
+                        <path d="M250,150 Q300,200 350,150 T450,150" stroke="#B19CD9" stroke-width="4" fill="none"/>
+                        <path d="M150,250 Q200,300 250,250 T350,250" stroke="#B19CD9" stroke-width="4" fill="none"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-serif font-bold text-gray-800 mb-2">About Lavender Horizons</h2>
+                <div class="w-24 h-1 bg-lavender mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <div class="relative">
+                        <div class="absolute -top-4 -left-4 w-64 h-64 bg-pastel-yellow rounded-lg"></div>
+                        <div class="absolute -bottom-4 -right-4 w-64 h-64 bg-pastel-blue rounded-lg"></div>
+                        <div class="relative z-10 bg-lavender-light p-8 rounded-lg shadow-lg">
+                            <svg class="w-16 h-16 text-lavender mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                            <h3 class="text-xl font-serif font-semibold text-gray-800 mb-2">Our Story</h3>
+                            <p class="text-gray-600">I'm Chandini Mahesh, a Clinical Psychology graduate, counselor, and mental health advocate. I founded Lavender Horizons Wellbeing to promote mental health awareness and provide compassionate counseling services for individuals across all life stages, from schoolchildren to working adults.</p>
+                            <p class="text-gray-600 mt-4">We aim to create safe spaces for healing, growth, and resilience, empowering people to "Bloom Beyond Boundaries."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h3 class="text-2xl font-serif font-semibold text-gray-800 mb-4">Our Mission</h3>
+                    <p class="text-gray-600 mb-6">At Lavender Horizons, we believe that everyone deserves access to quality mental health support. Our mission is to provide compassionate, evidence-based counseling services that empower individuals to overcome challenges and thrive.</p>
+                    
+                    <h3 class="text-2xl font-serif font-semibold text-gray-800 mb-4">Our Values</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex items-start">
+                            <div class="bg-pastel-pink p-2 rounded-full mr-3">
+                                <svg class="w-5 h-5 text-lavender" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Compassion</h4>
+                                <p class="text-sm text-gray-600">We approach every client with empathy and understanding.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-pastel-blue p-2 rounded-full mr-3">
+                                <svg class="w-5 h-5 text-lavender" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Excellence</h4>
+                                <p class="text-sm text-gray-600">We are committed to the highest standards of care.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-pastel-yellow p-2 rounded-full mr-3">
+                                <svg class="w-5 h-5 text-lavender" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Inclusivity</h4>
+                                <p class="text-sm text-gray-600">We welcome and respect individuals of all backgrounds.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-pastel-green p-2 rounded-full mr-3">
+                                <svg class="w-5 h-5 text-lavender" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2h-1V9a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Education</h4>
+                                <p class="text-sm text-gray-600">We believe in empowering through knowledge.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Psychology Section -->
+    <section id="psychology" class="py-16 bg-lavender-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-serif font-bold text-gray-800 mb-2">Understanding Psychology</h2>
+                <div class="w-24 h-1 bg-lavender mx-auto"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Psychology helps us understand human behavior and mental processes, providing insights into how we think, feel, and act.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="bg-pastel-pink w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-lavender" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-semibold text-gray-800 mb-2">What is Psychology?</h3>
+                    <p class="text-gray-600">Psychology is the scientific study of the mind and behavior. Psychologists explore concepts such as perception, cognition, emotion, personality, behavior, and interpersonal relationships.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="bg-pastel-blue w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-lavender" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-semibold text-gray-800 mb-2">Mental Health Importance</h3>
+                    <p class="text-gray-600">Mental health is essential to our overall wellbeing. It affects how we think, feel, and act, and determines how we handle stress, relate to others, and make choices in our daily lives.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="bg-pastel-yellow w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-lavender" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.715-5.349L11 6.477V16h2a1 1 0 110 2H7a1 1 0 110-2h2V6.477L6.237 7.582l1.715 5.349a1 1 0 01-.285 1.05A3.989 3.989 0 015 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.788l1.599.799L9 4.323V3a1 1 0 011-1z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-semibold text-gray-800 mb-2">Therapeutic Approaches</h3>
+                    <p class="text-gray-600">Different therapeutic approaches, such as cognitive-behavioral therapy, psychodynamic therapy, and humanistic therapy, offer various ways to address mental health concerns.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-white p-8 rounded-lg shadow-md">
+                <h3 class="text-2xl font-serif font-semibold text-gray-800 mb-4">The Mind-Body Connection</h3>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-2/3 md:pr-8">
+                        <p class="text-gray-600 mb-4">Research increasingly shows that mental health and physical health are closely linked. Good mental health can positively affect your physical health, and vice versa.</p>
+                        <p class="text-gray-600 mb-4">Taking care of your mental health is just as important as taking care of your physical health. This includes managing stress, getting enough sleep, maintaining healthy relationships, and seeking help when needed.</p>
+                        <p class="text-gray-600">At Lavender Horizons, we take a holistic approach to wellbeing, considering all aspects of your life that contribute to your mental health.</p>
+                    </div>
+                    <div class="md:w-1/3 mt-6 md:mt-0">
+                        <div class="bg-pastel-green p-4 rounded-lg">
+                            <h4 class="font-medium text-gray-800 mb-2">Signs to Seek Help:</h4>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-center">
+                                    <svg class="w-4 h-4 text-lavender mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    Persistent sadness or anxiety
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-4 h-4 text-lavender mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    Changes in sleep or appetite
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-4 h-4 text-lavender mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    Difficulty concentrating
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-4 h-4 text-lavender mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    Feeling overwhelmed
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-4 h-4 text-lavender mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    Relationship difficulties
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-serif font-bold text-gray-800 mb-2">Our Services</h2>
+                <div class="w-24 h-1 bg-lavender mx-auto"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">We offer professional counseling services tailored to meet your individual needs.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="service-card bg-white border border-lavender-light rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-3 bg-lavender"></div>
+                    <div class="p-6">
+                        <div class="w-16 h-16 bg-pastel-pink rounded-full flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-lavender" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-serif font-semibold text-gray-800 mb-2">Individual Therapy</h3>
+                        <p class="text-gray-600 mb-4">One-on-one sessions focused on addressing personal challenges, growth, and mental health concerns.</p>
+                        <ul class="text-gray-600 space-y-2 mb-6">
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-lavender mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                Anxiety & Depression
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-lavender mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                Stress Management
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-lavender mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                Personal Growth
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-lavender mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                Life Transitions
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-lavender mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                Trauma Recovery
+                            </li>
+                        </ul>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfHlBM4xr9aKeo-4d11gkLNsyC8jHKAiNiDorz2FUlVXxz_0Q/viewform?fbclid=PAZXh0bgNhZW0CMTEAAafGvt7SJl8q1DniMrC-xfWek16jQJlos0TjPt0Pg8lTZaJah8FJei3mneSf-w_aem_Ok9-NkLGmwA29xBgx30vhg" target="_blank" class="text-lavender hover:text-lavender-dark font-medium flex items-center">
+                            Book a Session
+                            <svg class="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-card bg-white border border-lavender-light rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-3 bg-lavender"></div>
+                    <div class="p-6">
+                        <div class="w-16 h-16 bg-pastel-green rounded-full flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-lavender" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-serif font-semibold text-gray-800 mb-2">Workshops & Education</h3>
+                        <p class="text-gray-600 mb-4">Educational sessions and workshops on various mental health topics to promote understanding and self-care.</p>
+                        <ul class="text-gray-600 space-y-2 mb-6">
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-lavender mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                Mindfulness Training
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-lavender mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                Stress Reduction
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-lavender mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                Emotional Intelligence
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-lavender mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                Mental Health Awareness
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-lavender mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                Coping Skills Development
+                            </li>
+                        </ul>
+                        <a href="mailto:lavenderhorizonswellbeing@gmail.com" class="text-lavender hover:text-lavender-dark font-medium flex items-center">
+                            Inquire About Workshops
+                            <svg class="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-lavender-light p-8 rounded-lg shadow-md max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/4 mb-6 md:mb-0 flex justify-center">
+                        <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center">
+                            <svg class="w-12 h-12 text-lavender" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="md:w-3/4 md:pl-8">
+                        <h3 class="text-2xl font-serif font-semibold text-gray-800 mb-2">Ready to Begin Your Journey?</h3>
+                        <p class="text-gray-700 mb-4">Schedule a consultation to discuss your needs and learn how our services can support your mental health and wellbeing.</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfHlBM4xr9aKeo-4d11gkLNsyC8jHKAiNiDorz2FUlVXxz_0Q/viewform?fbclid=PAZXh0bgNhZW0CMTEAAafGvt7SJl8q1DniMrC-xfWek16jQJlos0TjPt0Pg8lTZaJah8FJei3mneSf-w_aem_Ok9-NkLGmwA29xBgx30vhg" target="_blank" class="bg-lavender hover:bg-lavender-dark text-white font-medium py-2 px-6 rounded-lg transition duration-300 inline-block">Book Your Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-lavender-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-serif font-bold text-gray-800 mb-2">Client Testimonials</h2>
+                <div class="w-24 h-1 bg-lavender mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-pastel-pink rounded-full flex items-center justify-center mr-4">
+                            <span class="text-lavender font-medium text-lg">JD</span>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-800">Jamie D.</h4>
+                            <p class="text-sm text-gray-500">Individual Therapy</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Working with Lavender Horizons has been transformative. My therapist created a safe space for me to explore my anxiety, and I've developed valuable coping skills that I use every day."</p>
+                    <div class="mt-4 flex text-lavender">
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-pastel-blue rounded-full flex items-center justify-center mr-4">
+                            <span class="text-lavender font-medium text-lg">MT</span>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-800">Michael T.</h4>
+                            <p class="text-sm text-gray-500">Individual Therapy</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The counselors at Lavender Horizons helped me develop healthier patterns and truly listen to myself. I've gained valuable insights that have improved my daily life and relationships."</p>
+                    <div class="mt-4 flex text-lavender">
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-pastel-yellow rounded-full flex items-center justify-center mr-4">
+                            <span class="text-lavender font-medium text-lg">SR</span>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-800">Sarah R.</h4>
+                            <p class="text-sm text-gray-500">Workshop Participant</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The mindfulness workshop at Lavender Horizons provided me with practical tools I can use daily. The facilitator was knowledgeable and created a welcoming environment for all participants."</p>
+                    <div class="mt-4 flex text-lavender">
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-serif font-bold text-gray-800 mb-2">Contact Us</h2>
+                <div class="w-24 h-1 bg-lavender mx-auto"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Have questions or ready to start your journey? Reach out to us today.</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-lavender-light p-8 rounded-lg shadow-md">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/2 md:pr-8 mb-8 md:mb-0">
+                        <h3 class="text-xl font-serif font-semibold text-gray-800 mb-4">Get in Touch</h3>
+                        <p class="text-gray-600 mb-6">We're here to answer your questions and help you take the first step toward improved mental wellbeing.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-white p-2 rounded-full mr-3">
+                                    <svg class="w-5 h-5 text-lavender" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Email</h4>
+                                    <p class="text-gray-600">lavenderhorizonswellbeing@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-white p-2 rounded-full mr-3">
+                                    <svg class="w-5 h-5 text-lavender" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9l-4.9 4.9-4.9-4.9a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Location</h4>
+                                    <p class="text-gray-600">Bangalore, Karnataka, India</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-white p-2 rounded-full mr-3">
+                                    <svg class="w-5 h-5 text-lavender" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Phone</h4>
+                                    <p class="text-gray-600">+91 8073012801</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-medium text-gray-800 mb-2">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-white p-2 rounded-full text-lavender hover:text-lavender-dark transition">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                                <a href="#" class="bg-white p-2 rounded-full text-lavender hover:text-lavender-dark transition">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93f93b9cf2038377',t:'MTc0NzIxMzUxNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
